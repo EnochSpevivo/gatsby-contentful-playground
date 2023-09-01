@@ -11,10 +11,16 @@ const ArticlePreview = ({ posts }) => {
   if (!posts) return null
   if (!Array.isArray(posts)) return null
 
+  console.log({
+    posts,
+  });
+
+
   return (
     <Container>
       <ul className={styles.articleList}>
         {posts.map((post) => {
+          {console.log({gatsbyImage: post.heroImage.gatsbyImage})}
           return (
             <li key={post.slug}>
               <Link to={`/blog/${post.slug}`} className={styles.link}>
